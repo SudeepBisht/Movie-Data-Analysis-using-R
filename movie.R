@@ -17,7 +17,10 @@
 
 #defining the variables as it gives an error of variables not defined
 
+# Variables for storing the url of the website
 urla<-0,url<-0;
+
+# pre defining of the data frame that will store the movie data
 film.ratings<-data.frame(V1=NA,V2=NA,V3=NA)
 film<-film.ratings
 colnames(film)<-c("V1","V2","V3")
@@ -27,6 +30,7 @@ tmp<-"a";ratings<-1;duration<-1;b<-1;mvdatatmp<-1;genre<-"a"
 year<-1;tmp1<-1;mvdata<-0
 
 
+# The starting index of the pages
 pgstrt=c(1,51,101)
 urlno<-0
 
@@ -40,10 +44,15 @@ for(i in pgstrt)
   {
   
     urlno<-urlno+1
+    
+    # url being incrementally entered and processed
     urla[urlno] <-paste("http://www.imdb.com/search/title?at=0&languages=hi%7C1&sort=moviemeter,asc&start=",i,"&title_type=feature")
     url<-urla[urlno]
-    cat("\nfilm nrow",nrow(film))
-    cat("\nfilm.ratings nrow",nrow(film.ratings))
+    
+    #cat("\nfilm nrow",nrow(film))
+    #cat("\nfilm.ratings nrow",nrow(film.ratings))
+    
+    # url is passed as a parameter to the function scrape_ratings
     film<- scrape_ratings(url)
   
     z<-rbind(film.ratings,film)
