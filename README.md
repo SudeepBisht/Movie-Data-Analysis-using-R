@@ -11,4 +11,6 @@ Right now the project is in development phase and only web scraping has been don
 
 Also the values or to say movies with a missing value have been manually removed.
 
-Around 100 movies were taken into analysis.
+Around 100 movies were taken into analysis. The movie data is also being imported automatically.
+
+The movie data analysis has also been done in which the graphs have been presented.
