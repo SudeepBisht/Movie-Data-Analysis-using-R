@@ -21,7 +21,7 @@ library(googleVis)
   substr(x, nchar(x)-n+1, nchar(x))
 }
 
-<<<<<<< HEAD
+
 urla<-0;film.ratings<-data.frame(V1=NA,V2=NA,V3=NA)
 film<-film.ratings
 url <-paste("http://www.imdb.com/search/title?at=0&languages=hi%7C1&sort=moviemeter,asc&start=1&title_type=feature")
@@ -32,12 +32,14 @@ colnames(film.ratings)<-c("V1","V2","V3")
 pgstrt=c(1,51,101);k<-0
 for(i in pgstrt){
   k<-k+1
+  #NOTE: The ordering type can be changed by changing the parameter 'moviemeter' in
+  #      the below code mentioned after sort to your desired  type
   urla[k] <-paste("http://www.imdb.com/search/title?at=0&languages=hi%7C1&sort=moviemeter,asc&start=",i,"&title_type=feature")
   url<-urla[k]
   cat("\nfilm nrow",nrow(film))
   cat("\nfilm.ratings nrow",nrow(film.ratings))
   film<- scrape_ratings(url)
-=======
+
 #defining the variables as it gives an error of variables not defined
 
 # Variables for storing the url of the website
@@ -77,7 +79,7 @@ for(i in pgstrt)
     
     # url is passed as a parameter to the function scrape_ratings
     film<- scrape_ratings(url)
->>>>>>> origin/master
+
   
   z<-rbind(film.ratings,film)
   film.ratings<-z
