@@ -21,10 +21,7 @@ library(googleVis)
   substr(x, nchar(x)-n+1, nchar(x))
 }
 
-<<<<<<< HEAD:Movie analysis [no year classification]/movie.R
-=======
 
->>>>>>> origin/master:movie.R
 urla<-0;film.ratings<-data.frame(V1=NA,V2=NA,V3=NA)
 film<-film.ratings
 url <-paste("http://www.imdb.com/search/title?at=0&languages=hi%7C1&sort=moviemeter,asc&start=1&title_type=feature")
@@ -42,8 +39,6 @@ for(i in pgstrt){
   cat("\nfilm nrow",nrow(film))
   cat("\nfilm.ratings nrow",nrow(film.ratings))
   film<- scrape_ratings(url)
-<<<<<<< HEAD:Movie analysis [no year classification]/movie.R
-=======
 
 #defining the variables as it gives an error of variables not defined
 
@@ -85,8 +80,7 @@ for(i in pgstrt)
     # url is passed as a parameter to the function scrape_ratings
     film<- scrape_ratings(url)
 
->>>>>>> origin/master:movie.R
-  
+
   z<-rbind(film.ratings,film)
   film.ratings<-z
 }
