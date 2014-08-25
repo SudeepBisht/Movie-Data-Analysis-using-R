@@ -21,6 +21,7 @@ library(googleVis)
   substr(x, nchar(x)-n+1, nchar(x))
 }
 
+#defining the variables as it gives an error of variables not defined
 
 urla<-0;film.ratings<-data.frame(V1=NA,V2=NA,V3=NA)
 film<-film.ratings
@@ -29,39 +30,20 @@ url <-paste("http://www.imdb.com/search/title?at=0&languages=hi%7C1&sort=movieme
 #film<-film.ratings
 colnames(film)<-c("V1","V2","V3")
 colnames(film.ratings)<-c("V1","V2","V3")
-pgstrt=c(1,51,101);k<-0
-for(i in pgstrt){
-  k<-k+1
-  urla[k] <-paste("http://www.imdb.com/search/title?at=0&languages=hi%7C1&sort=moviemeter,asc&start=",i,"&title_type=feature")
-  url<-urla[k]
-  cat("\nfilm nrow",nrow(film))
-  cat("\nfilm.ratings nrow",nrow(film.ratings))
-  film<- scrape_ratings(url)
+
+# The starting index of the pages
+
+pgstrt=c(1,51,101);
+k<-0
   
-  #defining the variables as it gives an error of variables not defined
-  
-  # Variables for storing the url of the website
-  urla<-0,url<-0;
-  
-  # pre defining of the data frame that will store the movie data
-  film.ratings<-data.frame(V1=NA,V2=NA,V3=NA)
-  film<-film.ratings
-  colnames(film)<-c("V1","V2","V3")
-  colnames(film.ratings)<-c("V1","V2","V3")
   
   tmp<-"a";ratings<-1;duration<-1;b<-1;mvdatatmp<-1;genre<-"a"
   year<-1;tmp1<-1;mvdata<-0
   
   
-  # The starting index of the pages
-  pgstrt=c(1,51,101)
   urlno<-0
   
   
-  #url <-paste("http://www.imdb.com/search/title?at=0&languages=hi%7C1&sort=moviemeter,asc&start=1&title_type=feature")
-  
-  #film.ratings <- scrape_ratings(url)
-  #film<-film.ratings
   
   for(i in pgstrt)
   {
