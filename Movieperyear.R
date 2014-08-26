@@ -1,3 +1,8 @@
+install.packages("plyr")
+install.packages("ggplot2")
+install.packages("googleVis")
+
+library(plyr)
 library(ggplot2)
 library(googleVis)
 
