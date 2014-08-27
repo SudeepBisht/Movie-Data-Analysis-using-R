@@ -37,6 +37,7 @@ colnames(film)<-c("V1","V2","V3")
 colnames(film.ratings)<-c("V1","V2","V3")
 
 # The starting index of the pages
+# The indices can be added or a for/while loop can be put as per your convenience
 
 pgstrt=c(1,51,101);
 k<-0
