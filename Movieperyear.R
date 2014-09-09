@@ -37,8 +37,13 @@ colnames(film)<-c("V1","V2","V3")
 colnames(film.ratings)<-c("V1","V2","V3")
 
 # The starting index of the pages
-# The indices can be added or a for/while loop can be put as per your convenience
+# The indices can be added or a for/while loop/ a seq can be put as per your convenience
 
+#pgno is the last page that will be scraped
+#pgno=301
+#pgstrt=seq(1,pgno, by = 50)
+
+#here pgstrt is manually entered
 pgstrt=c(1,51,101);
 k<-0
   
